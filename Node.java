@@ -31,7 +31,7 @@ public class Node {
         }
     }
     public String isValidItem(String food)throws FileNotFoundException{
-        File f=new File("/Users/clmilligan/HCSS/Grocery-Project/grocery-items.txt");
+        File f=new File("/Users/clmilligan/HCSS/Clemi-Grocery-Project/grocery-items.txt");
         Scanner s = new Scanner(f);
         Boolean isFood=false;
         while(s.hasNext()){
@@ -51,7 +51,7 @@ public class Node {
 
     }
     public Node isValidNode(Node food)throws FileNotFoundException{
-        File f=new File("/Users/clmilligan/HCSS/Grocery-Project/grocery-items.txt");
+        File f=new File("/Users/clmilligan/HCSS/Clemi-Grocery-Project/grocery-items.txt");
         Scanner s = new Scanner(f);
         Boolean isFood=false;
         while(s.hasNext()){
