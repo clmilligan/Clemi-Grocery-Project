@@ -5,7 +5,7 @@ public class GroceryTester extends GroceryList{
     public static void main(String[] args)throws FileNotFoundException {
         Node test=new Node("chicken");
         GroceryList myList=new GroceryList(test);
-        myList.add("eggs");
+        myList.add("eggs",0);
         myList.add("milk",1);
         myList.remove(0);
         System.out.println(myList.toString());

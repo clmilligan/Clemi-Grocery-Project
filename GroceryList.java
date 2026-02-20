@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 public class GroceryList extends Node{
-    private Node head;
-    public GroceryList(){
+    private Node head; 
+    public GroceryList(){//grocery constructor that instantiates the head/list with null
         head=null;
     }
-    public GroceryList(Node head){
+    public GroceryList(Node head){//grocery constructor that instantiates the head/list with a value (from the parameters)
         this.head=head;
     }
     public void add(String item){
