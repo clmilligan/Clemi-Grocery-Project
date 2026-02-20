@@ -70,7 +70,7 @@ public class GroceryList extends Node{
         return count;
     }
     public Map<String, Double> getGroceryMap() throws FileNotFoundException{//creates a map with the node
-        File f=new File("/Users/clmilligan/HCSS/Grocery-Project/grocery-items.txt");
+        File f=new File("/Users/clmilligan/HCSS/Clemi-Grocery-Project/grocery-items.txt");
         Scanner s = new Scanner(f);
         Map<String,Double> grocMap=new HashMap<>();
         while(s.hasNext()){
