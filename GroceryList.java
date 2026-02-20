@@ -26,7 +26,7 @@ public class GroceryList extends Node{
         }
        
     }
-    public void add(String item, int idx){
+    public void add(String item, int idx){//adds the item to a certain index in the node list
         Node incoming = new Node(item);
         if (head == null) {
             head = incoming;
@@ -45,7 +45,7 @@ public class GroceryList extends Node{
             }
         }
     }
-    public void remove(int idx){
+    public void remove(int idx){//removes the item at a certain index in the list
         if (head != null && idx<size() && idx >=0) {
             
             if (idx == 0) {
@@ -60,7 +60,7 @@ public class GroceryList extends Node{
         }
     }
 
-    public int size(){
+    public int size(){//checks the size of the node
         int count = 0;
         Node curr = head;
             while (curr!=null) {
@@ -69,7 +69,7 @@ public class GroceryList extends Node{
             }
         return count;
     }
-    public Map<String, Double> getGroceryMap() throws FileNotFoundException{
+    public Map<String, Double> getGroceryMap() throws FileNotFoundException{//creates a map with the node
         File f=new File("/Users/clmilligan/HCSS/Grocery-Project/grocery-items.txt");
         Scanner s = new Scanner(f);
         Map<String,Double> grocMap=new HashMap<>();
@@ -79,18 +79,18 @@ public class GroceryList extends Node{
             String item=line.substring(1,end);
             double price= Double.parseDouble(line.substring(end+2));
         
-            if (indexOf(item)!=-1){
+            if (indexOf(item)!=-1){//checks each item in the txt file with the node list
                 grocMap.put(item,price);
 
             }
         }
         return grocMap;
     }
-    public int indexOf(String data)  {
+    public int indexOf(String data)  {//finds the index of an object
         int idx=0;
         Node curr = head;
         while(curr!=null) {
-            if(data.equals(curr.item)){
+            if(data.equals(curr.item)){//check the items
                 return idx;
             }
             idx++;
@@ -98,15 +98,15 @@ public class GroceryList extends Node{
         }
         return -1;
     }
-    public double getCost()throws FileNotFoundException{
+    public double getCost()throws FileNotFoundException{//gets the cost of the list
         double total=0.0;
         Map<String, Double> groceries=getGroceryMap();
-        for(Double price: groceries.values()){
+        for(Double price: groceries.values()){//does it by accasing the map and adding the values
             total+=price;
         }
         return total;
     }
-    public String toString(){
+    public String toString(){//overrides the regular too string method and creates one that prints the node and the total cost
         try {
             String toRet = "";
             Node curr = head;
@@ -118,10 +118,9 @@ public class GroceryList extends Node{
         } catch (Exception e) {
             e.printStackTrace();
             return ("no file found");
-        }
-        
-        
+        } 
     }
+
     
 }
 
